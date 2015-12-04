@@ -25,7 +25,7 @@ class Runner
 
   def gear_box
     puts "What would you like to see?"
-    puts "I accept the following commands:\n- time table : displays days and weeks left in the semester\n- available spend : displays data about how much money you can spend per day and week\n- exit : exits this program"
+    puts "I accept the following commands:\n- time table : displays days and weeks left in the semester\n- available spend : displays data about how much money you can spend per day and week\n-restart : restarts the program \n- exit : exits this program"
     command = gets.chomp.downcase
 
     if command == "exit"
@@ -37,6 +37,8 @@ class Runner
       @user_budget.bank_after_known_expenses
       @user_budget.available_spend
       gear_box
+    elsif command == "restart"
+      run
     else
       puts "Please enter a valid command"
       gear_box
